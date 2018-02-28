@@ -1,0 +1,37 @@
+---
+title: "Assignment1"
+author: "Mahesh Kumar"
+date: "2/27/2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r GlobalOptions}
+options(knitr.duplicate.label = 'allow')
+```
+
+## Plot Using 'mtcars' Dataset
+
+```{r, comment = "", message = FALSE, warning = FALSE, echo = FALSE}
+library(plotly)
+f <- list(
+  family = "Courier New, monospace",
+  size = 18,
+  color = "#7f7f7f"
+)
+xlab <- list(
+  title = "Weight",
+  titlefont = f
+)
+ylab <- list(
+  title = "MPG",
+  titlefont = f
+)
+plot_ly(mtcars, x = mtcars$wt, y = mtcars$mpg, mode="markers", color = as.factor(mtcars$cyl), size = mtcars$hp) %>% layout(title = 'MPG v/s Weight', xaxis=xlab, yaxis=ylab)
+```
+
+## Thank you!
+
